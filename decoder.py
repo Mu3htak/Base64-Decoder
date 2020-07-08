@@ -9,7 +9,7 @@ args = parser.parse_args()
 try:
     for i in args.decode:
         decodedbytes = base64.b64decode(i)
-        decodedstr = str(decodedbytes)
+        decodedstr = str(decodedbytes, "utf-8")
         print("[%s] Decoded -> %s" %(Fore.RED + i + Fore.RESET,Fore.GREEN + decodedstr))
         sys.stdout.write(Fore.GREEN + Fore.RESET)
         sys.stdout.flush()
