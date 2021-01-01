@@ -7,7 +7,6 @@ parser.add_argument('-d','--decode',nargs='*',required=True,help="Paste base64 s
 args = parser.parse_args()
 
 try:
-    
     for i in args.decode:
         decodedbytes = base64.b64decode(i)
         decodedstr = str(decodedbytes, "utf-8")
@@ -16,5 +15,4 @@ try:
         sys.stdout.flush()
         
 except binascii.Error:
-    
     print("Bad Format -> [%s]" % (Fore.RED + i + Fore.RESET))
